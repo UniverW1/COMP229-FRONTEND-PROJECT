@@ -10,21 +10,24 @@ function Navbar() {
   }
 
   return (
-    <div style={{ padding: '15px', borderBottom: '1px solid #ccc' }}>
-      <Link to="/" style={{ marginRight: '15px' }}>Home</Link>
-      <Link to="/products" style={{ marginRight: '15px' }}>Products</Link>
+    <div className="navbar">
+      
+     
+      <div className="nav-left">
+        <img src="/solemasters-logo.png" alt="Sole Masters" className="logo" />
+        <h2 className="brand">Sole Masters</h2>
+      </div>
 
-      {!token && (
-        <Link to="/login" style={{ marginRight: '15px' }}>Login</Link>
-      )}
 
-      {!token && (
-        <Link to="/register" style={{ marginRight: '15px' }}>Register</Link>
-      )}
+      <div className="nav-right">
+        <Link to="/">Home</Link>
+        <Link to="/products">Products</Link>
 
-      {token && (
-        <button onClick={handleLogout}>Logout</button>
-      )}
+        {!token && <Link to="/login">Login</Link>}
+        {!token && <Link to="/register">Register</Link>}
+
+        {token && <button onClick={handleLogout}>Logout</button>}
+      </div>
     </div>
   )
 }

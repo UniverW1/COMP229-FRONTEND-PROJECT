@@ -1,4 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
+
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'
@@ -8,16 +11,30 @@ import EditProduct from './pages/EditProduct'
 import Navbar from './components/Navbar'
 import ProtectedRoute from './components/ProtectedRoute'
 
+// Scroll to top on page change
+function ScrollToTop() {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [pathname])
+
+  return null
+}
+
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
-      <div style={{ padding: '20px' }}>
+
+      <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/products" element={<Products />} />
+
           <Route
             path="/add-product"
             element={
@@ -26,6 +43,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/edit-product/:id"
             element={
@@ -34,6 +52,9 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* 404 Page */}
+          <Route path="*" element={<h2>Page Not Found</h2>} />
         </Routes>
       </div>
     </BrowserRouter>
