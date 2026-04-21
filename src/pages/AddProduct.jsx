@@ -19,7 +19,7 @@ function AddProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const response = await fetch('http://localhost:5000/api/products', {
+    const response = await fetch('https://comp229-backend-project.onrender.com/api/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

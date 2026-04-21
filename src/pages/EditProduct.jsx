@@ -19,7 +19,7 @@ function EditProduct() {
 
   useEffect(() => {
     const fetchProduct = async () => {
-      const response = await fetch(`http://localhost:5000/api/products/${id}`)
+      const response = await fetch(`https://comp229-backend-project.onrender.com/api/products/${id}`)
       const data = await response.json()
 
       if (response.ok) {
@@ -42,7 +42,7 @@ function EditProduct() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+    const response = await fetch(`https://comp229-backend-project.onrender.com/api/products/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

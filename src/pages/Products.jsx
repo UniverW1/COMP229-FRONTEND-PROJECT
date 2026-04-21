@@ -6,7 +6,7 @@ function Products() {
   const token = localStorage.getItem('token')
 
   const fetchProducts = async () => {
-    const response = await fetch('http://localhost:5000/api/products')
+    const response = await fetch('https://comp229-backend-project.onrender.com/api/products')
     const data = await response.json()
 
     if (response.ok) {
@@ -15,7 +15,7 @@ function Products() {
   }
 
   const handleDelete = async (id) => {
-    const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+    const response = await fetch(`https://comp229-backend-project.onrender.com/api/products/${id}`, {
       method: 'DELETE',
       headers: {
         Authorization: `Bearer ${token}`
@@ -28,7 +28,7 @@ function Products() {
   }
 
   const handleDisable = async (id) => {
-    await fetch(`http://localhost:5000/api/products/${id}/disable`, {
+    await fetch(`https://comp229-backend-project.onrender.com/api/products/${id}/disable`, {
       method: 'PATCH',
       headers: {
         Authorization: `Bearer ${token}`
