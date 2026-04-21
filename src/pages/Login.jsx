@@ -10,11 +10,12 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    const response = await fetch('https://comp229-backend-project.onrender.com/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
+    const response = await fetch("https://comp229-backend-project.onrender.com/api/auth/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": `Bearer ${localStorage.getItem("token")}`
+    },
       body: JSON.stringify({
         email,
         password
