@@ -61,6 +61,12 @@ function Products() {
               <img
                 src={product.imageUrl || 'https://via.placeholder.com/150'}
                 alt={product.name}
+                  style={{
+                    width: "100%",
+                    height: "200px",
+                    objectFit: "cover",
+                    borderRadius: "8px"
+                  }}
               />
 
               <h3>{product.name}</h3>
