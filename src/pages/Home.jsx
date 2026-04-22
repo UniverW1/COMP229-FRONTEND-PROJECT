@@ -3,6 +3,11 @@ function Home() {
     <div>
       <h2>Home Page</h2>
       <p>Welcome to Sole Masters frontend release.</p>
+      <img
+        src="/solemasters-logo.png"
+        alt="Sole Masters Logo"
+        style={{ width: 120, height: "auto" }}
+      />
     </div>
   )
 }
