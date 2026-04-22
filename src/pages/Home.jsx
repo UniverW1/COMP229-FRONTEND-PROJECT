@@ -6,7 +6,7 @@ function Home() {
       <img
         src="/solemasters-logo.png"
         alt="Sole Masters Logo"
-        style={{ width: 120, height: "auto" }}
+        style={{ width: 640, height: "auto" }}
       />
     </div>
   )
